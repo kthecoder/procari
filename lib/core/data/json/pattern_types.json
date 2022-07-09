@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Creational",
+        "description": "Design patterns that are all about class instantiation or object creation. Which can also have a sub-set of class-creational and object-creational patterns. Where class-creational patterns use inheritance, object-creational patterns use delegation."
+    },
+    {
+        "name": "Structural",
+        "description": "Design patterns that are about organizing different classes and objects to form larger structures and provide new functionality."
+    },
+    {
+        "name": "Behavioral",
+        "description": "Design patterns that are about identifying common communication patterns between objects."
+    }
+]

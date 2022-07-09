@@ -1,0 +1,118 @@
+[
+    
+    {
+        "name": "Singleton",
+        "type": "Creational",
+        "description": "A singleton restricts a class to only have one instance created."
+    },
+    {
+        "name": "Object Pool",
+        "type": "Creational",
+        "description": "An object pool is a pool of pre-initialized objects that are ready to use, rather than constant creation and destruction."
+    },
+    {
+        "name": "Factory",
+        "type": "Creational",
+        "description": "A factory creates objects without exposing the creation logic by defining an interface and letting subclasses decide which to instantiate."
+    },
+    {
+        "name": "Builder",
+        "type": "Creational",
+        "description": "A builder is a representation of how to create a complex object which can be used to create many different complex representations from it."
+    },
+    {
+        "name": "Lazy Initialization",
+        "type": "Creational",
+        "description": "A lazy object doesn't instantiate until the first time it is needed."
+    },
+    {
+        "name": "Dependency Injection",
+        "type": "Creational",
+        "description": "Injecting dependencies allows for the separation of construction and usage which allows for the loosely coupled effect."
+    },
+    {
+        "name": "Adapter",
+        "type": "Structural",
+        "description": "An adapter allows for the conversion of one thing to another, allowing for the ability to connect like objects that have different implementations."
+    },
+    {
+        "name": "Bridge",
+        "type": "Structural",
+        "description": "A bridge decouples the abstraction from implementation, allowing for loosely coupled classes that can be changed without affecting others."
+    },
+    {
+        "name": "Composite",
+        "type": "Structural",
+        "description": "A composite allows for creation of objects into a tree structure to represent part-whole hierarchies."
+    },
+    {
+        "name": "Decorator",
+        "type": "Structural",
+        "description": "A decorator allows for creating dynamic components that can wrap around the original component, allowing for creation of new components that simply just need to be wrapped with the necessary components. "
+    },
+    {
+        "name": "Facade",
+        "type": "Structural",
+        "description": "A facade hides the implementation and provides an interface in which to interact with the system."
+    },
+    {
+        "name": "Flyweight",
+        "type": "Structural",
+        "description": "A flyweight shares data with similar objects to conserve on memory usage."
+    },
+    {
+        "name": "Proxy",
+        "type": "Structural",
+        "description": "A proxy allows for controlling access to the original object."
+    },
+    {
+        "name": "Chain of Responsibility",
+        "type": "Behavioral",
+        "description": "Pass along a request through a chain, where each link determines if its capable of processing the request or needs to pass it along."
+    },
+    {
+        "name": "Command",
+        "type": "Behavioral",
+        "description": "Use an object to encapsulate all information needed to perform an action for a set of requests."
+    },
+    {
+        "name": "Interpreter",
+        "type": "Behavioral"
+    },
+    {
+        "name": "Iterator",
+        "type": "Behavioral"
+    },
+    {
+        "name": "Mediator",
+        "type": "Behavioral"
+    },
+    {
+        "name": "Memento",
+        "type": "Behavioral"
+    },
+    {
+        "name": "Null Object",
+        "type": "Behavioral"
+    },
+    {
+        "name": "Observer",
+        "type": "Behavioral"
+    },
+    {
+        "name": "State",
+        "type": "Behavioral"
+    },
+    {
+        "name": "Strategy",
+        "type": "Behavioral"
+    },
+    {
+        "name": "Template",
+        "type": "Behavioral"
+    },
+    {
+        "name": "Visitor",
+        "type": "Behavioral"
+    }
+]

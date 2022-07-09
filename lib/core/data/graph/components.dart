@@ -1,0 +1,17 @@
+List<String> graphShapes = [
+  'Junction',
+  'Rectangle',
+  'Rounded Rectangle',
+  'Oval',
+  'Crystal',
+  'Rhomboid',
+  'Bean',
+  'Bean Left',
+  'Bean Right',
+  'Document',
+  'Horizontal Hexagon',
+  'Vertical Hexagon',
+  'Bend Left',
+  'Bend Right',
+  'Corner-less Rectangle',
+];
