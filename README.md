@@ -1,3 +1,5 @@
+![Procari Header](design/Graphics/Headers/procari_header_dark_text.png)
+
 # Procarí
 
 ## Desire, Question, Create
