@@ -2,8 +2,6 @@
 
 # Procarí
 
-## Desire, Question, Create
-
 Procarí enlightens creators by bringing them a place to discover new possibilities. 
 
 Allowing creators to organize their thoughts, break them down, and build them up into a powerful representation that helps bring projects to fruition.
