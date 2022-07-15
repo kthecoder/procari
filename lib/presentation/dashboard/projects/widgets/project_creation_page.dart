@@ -48,15 +48,12 @@ class ProjectCreationPage extends HookWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Transform.rotate(
-                  angle: 270 * math.pi / 180,
-                  child: IconButton(
-                    icon: Icon(SkyIcons.triangleLeft),
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.pop(context);
-                    },
-                  ),
+                IconButton(
+                  icon: Icon(SkyIcons.play_down),
+                  onPressed: () {
+                    Navigator.pop(context);
+                    Navigator.pop(context);
+                  },
                 )
               ],
             ),
@@ -84,7 +81,7 @@ class ProjectCreationPage extends HookWidget {
                           Theme.of(context).textTheme.displaySmall!.fontSize,
                     ),
                     border: InputBorder.none,
-                    hintText: 'Project Name',
+                    hintText: 'New Project Name',
                   ),
                   style: TextStyle(
                     color: Colors.white,

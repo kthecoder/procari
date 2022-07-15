@@ -1,11 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:procari/presentation/account/account.dart';
+import 'package:procari/presentation/settings/account/account.dart';
 import 'package:procari/presentation/catalog/catalog.dart';
 import 'package:procari/presentation/composition/composition.dart';
 import 'package:procari/presentation/dashboard/dashboard.dart';
 import 'package:procari/presentation/graph/graph.dart';
 import 'package:procari/presentation/procari/procari.dart';
+import 'package:procari/presentation/settings/tasksCategories/tasks_categories_settings.dart';
+import 'package:procari/presentation/settings/theme/theme_settings.dart';
 import 'package:procari/presentation/tasks/tasks.dart';
 
 part 'router.gr.dart';
@@ -21,7 +23,6 @@ part 'router.gr.dart';
     CupertinoRoute(
       path: '/tasks',
       page: TasksPage,
-      initial: true,
     ),
     CupertinoRoute(
       path: '/graph',
@@ -30,6 +31,7 @@ part 'router.gr.dart';
     CupertinoRoute(
       path: '/composition',
       page: CompositionPage,
+      initial: true,
     ),
     CupertinoRoute(
       path: '/catalog',
@@ -38,6 +40,14 @@ part 'router.gr.dart';
     CupertinoRoute(
       path: '/account',
       page: AccountPage,
+    ),
+    CupertinoRoute(
+      path: '/theme-settings',
+      page: ThemeSettingsPage,
+    ),
+    CupertinoRoute(
+      path: '/tasks-categories-settings',
+      page: TasksCategoriesSettingsPage,
     ),
     CupertinoRoute(
       path: '/procari',

@@ -15,16 +15,15 @@ part 'theme_servicer_bloc.freezed.dart';
 class ThemeServicerBloc extends Bloc<ThemeServicerEvent, ThemeServicerState> {
   ThemeServicerBloc()
       : super(ThemeServicerState(
-          themeData: appThemeData[AppTheme.DarknessPrevails]!.apptheme,
-          themeMode: appThemeData[AppTheme.DarknessPrevails]!.themeMode,
-          themeExtension:
-              appThemeData[AppTheme.DarknessPrevails]!.themeExtension,
+          themeData: appThemeData[AppTheme.Lux]!.apptheme,
+          themeMode: appThemeData[AppTheme.Lux]!.themeMode,
+          themeExtension: appThemeData[AppTheme.Lux]!.themeExtension,
         )) {
     on<_ThemeChanged>((themeState, emit) {
       emit(ThemeServicerState(
         themeData: appThemeData[themeState.appTheme]!.apptheme,
         themeMode: appThemeData[themeState.appTheme]!.themeMode,
-        themeExtension: appThemeData[AppTheme.DarknessPrevails]!.themeExtension,
+        themeExtension: appThemeData[AppTheme.Lux]!.themeExtension,
       ));
     });
   }

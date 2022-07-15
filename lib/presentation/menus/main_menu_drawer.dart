@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:procari/core/data/routes.dart';
 import 'package:procari/core/icons/sky_icons.dart';
 import 'package:procari/core/routes/router.dart';
-import 'package:procari/presentation/dashboard/projects_widgets.dart';
+import 'package:procari/presentation/menus/widgets/project_list_widgets.dart';
 import 'package:procari/presentation/menus/widgets/main_menu_items.dart';
 
 class MainMenuDrawer extends StatelessWidget {

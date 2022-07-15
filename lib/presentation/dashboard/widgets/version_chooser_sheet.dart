@@ -16,7 +16,6 @@ class VersionChooserSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        splashRadius: 12.0,
         alignment: Alignment.topCenter,
         icon: Icon(SkyIcons.v),
         onPressed: () {
@@ -103,7 +102,7 @@ class VersionChooserSheet extends StatelessWidget {
                                                         '15/5',
                                                         style: Theme.of(context)
                                                             .textTheme
-                                                            .bodySmall,
+                                                            .labelSmall,
                                                       ),
                                                     ],
                                                   ),
@@ -123,7 +122,7 @@ class VersionChooserSheet extends StatelessWidget {
                                                         '22',
                                                         style: Theme.of(context)
                                                             .textTheme
-                                                            .bodySmall,
+                                                            .labelSmall,
                                                       ),
                                                     ],
                                                   ),

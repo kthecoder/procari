@@ -17,8 +17,10 @@ class TasksCategorySelector extends HookWidget {
   Widget build(BuildContext context) {
     Map<String, String> localizations = {
       'Tasks': AppLocalizations.of(context)!.tasks,
+      'Git': AppLocalizations.of(context)!.git,
       'Legal': AppLocalizations.of(context)!.legal,
-      'Vision': AppLocalizations.of(context)!.vision,
+      'Trash': AppLocalizations.of(context)!.trash,
+      'Data Modeling': AppLocalizations.of(context)!.data_modeling,
       'Drafts': AppLocalizations.of(context)!.drafts,
       'Events': AppLocalizations.of(context)!.events,
       'UI': AppLocalizations.of(context)!.ui,
@@ -26,8 +28,7 @@ class TasksCategorySelector extends HookWidget {
       'Graphics': AppLocalizations.of(context)!.graphics,
       'Writing': AppLocalizations.of(context)!.writing,
       'Research': AppLocalizations.of(context)!.research,
-      'Data Modeling': AppLocalizations.of(context)!.data_modeling,
-      'Git': AppLocalizations.of(context)!.git,
+      'Vision': AppLocalizations.of(context)!.vision,
       'Analysis': AppLocalizations.of(context)!.analysis,
       'Stats': AppLocalizations.of(context)!.stats,
       'Privacy': AppLocalizations.of(context)!.privacy,
@@ -36,8 +37,9 @@ class TasksCategorySelector extends HookWidget {
       'Data': AppLocalizations.of(context)!.data,
       'Filters': AppLocalizations.of(context)!.filters,
       'Stickers': AppLocalizations.of(context)!.stickers,
-      'Trash': AppLocalizations.of(context)!.trash,
       'Menu': AppLocalizations.of(context)!.menu,
+      'Bugs': AppLocalizations.of(context)!.bugs,
+      'Ideas': AppLocalizations.of(context)!.ideas,
     };
 
     return IconSelector(

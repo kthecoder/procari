@@ -3,14 +3,14 @@ import 'package:procari/domain/core/theme/elevation/theme_elevation.dart';
 import 'package:procari/domain/core/theme/theme_extension.dart';
 import 'package:procari/gen/fonts.gen.dart';
 
-final mainColor = const Color.fromRGBO(32, 33, 36, 1);
-final secondaryColor = const Color.fromRGBO(83, 83, 83, 1);
+final mainColor = const Color.fromRGBO(218, 218, 218, 1);
+final secondaryColor = const Color.fromRGBO(109, 109, 109, 1);
 
-ThemeData DarknessPrevails() {
+ThemeData vappid() {
   return ThemeData(
     fontFamily: 'ArminaSemiBold',
-    brightness: Brightness.dark,
-    primaryColor: Colors.white,
+    brightness: Brightness.light,
+    primaryColor: Colors.black,
     backgroundColor: mainColor,
     drawerTheme: DrawerThemeData(
       backgroundColor: mainColor,
@@ -59,7 +59,7 @@ ThemeData DarknessPrevails() {
         fontFamily: 'ArminaRegular',
       ),
       titleSmall: TextStyle(
-        fontSize: 19.0,
+        fontSize: 22.0,
         letterSpacing: 0.3,
         fontFamily: 'ArminaRegular',
       ), //Arima Semi-Bold | 19pt | White
@@ -69,13 +69,13 @@ ThemeData DarknessPrevails() {
         color: Colors.white,
         fontFamily: 'ArminaRegular',
         fontWeight: FontWeight.w300,
-        fontSize: 16.0,
+        fontSize: 18.0,
       ),
       bodySmall: TextStyle(
         color: Colors.white,
         fontFamily: 'ArminaRegular',
         fontWeight: FontWeight.w300,
-        fontSize: 13.0,
+        fontSize: 14.0,
       ),
       //
       labelLarge: TextStyle(
@@ -111,7 +111,7 @@ ThemeData DarknessPrevails() {
     ),
     iconTheme: IconThemeData(
       color: Colors.white,
-      size: 35.0,
+      size: 25.0,
     ),
     cardColor: mainColor,
     cardTheme: CardTheme(
@@ -142,7 +142,7 @@ ThemeData DarknessPrevails() {
       elevation: 0,
       padding: EdgeInsets.all(16.0),
       shadowColor: mainColor,
-      primary: Colors.white,
+      primary: Colors.black,
       backgroundColor: mainColor,
       side: BorderSide.none,
       shape: RoundedRectangleBorder(
@@ -155,7 +155,7 @@ ThemeData DarknessPrevails() {
       elevation: 0,
       padding: EdgeInsets.all(16.0),
       shadowColor: Colors.transparent,
-      primary: Colors.white,
+      primary: Colors.black,
       backgroundColor: Colors.transparent,
       side: BorderSide.none,
       shape: RoundedRectangleBorder(
@@ -164,10 +164,16 @@ ThemeData DarknessPrevails() {
       ),
     )),
     dialogBackgroundColor: mainColor,
+    dialogTheme: DialogTheme(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25.0),
+        side: BorderSide.none,
+      ),
+    ),
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: mainColor,
     ),
-    dividerColor: Colors.white,
+    dividerColor: Colors.black,
     dividerTheme: DividerThemeData(
       thickness: 0.1,
     ),
@@ -176,7 +182,7 @@ ThemeData DarknessPrevails() {
       linearTrackColor: Colors.transparent,
     ),
     tabBarTheme: TabBarTheme(
-      labelColor: Colors.white,
+      labelColor: Colors.black,
       indicator: BoxDecoration(color: Colors.transparent),
       unselectedLabelColor: secondaryColor,
 
@@ -191,10 +197,11 @@ ThemeData DarknessPrevails() {
   );
 }
 
-ProcariThemeExtension DarknessPrevailsThemeExtension() {
+ProcariThemeExtension vappidThemeExtension() {
   return ProcariThemeExtension(
     secondaryColor: secondaryColor.value,
-    gridColor: const Color.fromRGBO(83, 83, 83, 0.08).value,
+    gridColor: const Color.fromRGBO(109, 109, 109, 0.08).value,
     themeElevation: ThemeElevation(),
+    checkColor: const Color.fromRGBO(4, 255, 0, 1).value,
   );
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:procari/presentation/account/account_widgets.dart';
 import 'package:procari/presentation/catalog/catalog_widgets.dart';
 
 class CatalogPage extends HookWidget {

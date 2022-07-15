@@ -15,7 +15,11 @@ class ProjectCard extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-          padding: EdgeInsets.all(mediaQueryWidth * 0.01),
+          padding: EdgeInsets.fromLTRB(
+              mediaQueryWidth * 0.03,
+              mediaQueryWidth * 0.005,
+              mediaQueryWidth * 0.03,
+              mediaQueryWidth * 0.005),
           child: Card(
             child: Padding(
               padding: EdgeInsets.all(mediaQueryWidth * 0.015),
@@ -25,27 +29,25 @@ class ProjectCard extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            AutoSizeText(
-                              'Alpha Ver.A.XXX',
-                              style: Theme.of(context).textTheme.labelSmall,
-                            ),
-                          ]),
-                      SizedBox(
-                        height: mediaQueryHeight * 0.075,
+                      AutoSizeText(
+                        'Alpha Ver.A.XXX',
+                        style: Theme.of(context).textTheme.labelSmall,
                       ),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            AutoSizeText('Project Name',
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style:
-                                    Theme.of(context).textTheme.headlineSmall),
-                          ]),
+                      SizedBox(
+                        height: mediaQueryHeight * 0.03,
+                      ),
+                      SizedBox(
+                        width: mediaQueryWidth * 0.13,
+                        child: AutoSizeText('Project Name Goes Here',
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyText1),
+                      ),
                     ],
+                  ),
+                  SizedBox(
+                    height: mediaQueryHeight * 0.045,
                   ),
                   Column(
                     children: [
@@ -59,17 +61,23 @@ class ProjectCard extends StatelessWidget {
         ),
         Positioned(
           top: mediaQueryWidth * 0,
-          right: mediaQueryWidth * 0,
+          right: mediaQueryWidth * 0.02,
           child: Container(
-            height: mediaQueryWidth * 0.07,
-            width: mediaQueryWidth * 0.07,
+            height: mediaQueryWidth * 0.045,
+            width: mediaQueryWidth * 0.045,
             child: Card(
               elevation: 8,
               child: Padding(
-                padding: EdgeInsets.all(mediaQueryWidth * 0.009),
+                padding: EdgeInsets.all(mediaQueryWidth * 0.006),
                 //TODO Update based on State
-                child: Image.asset('assets/images/badges/Active.png'),
+                child: Image.asset(
+                  'assets/images/badges/Active.png',
+                  fit: BoxFit.fill,
+                  filterQuality: FilterQuality.high,
+                ),
               ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0)),
             ),
           ),
         ),

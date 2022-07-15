@@ -56,7 +56,7 @@ class TaskField extends StatelessWidget {
             alignment: AlignmentDirectional.bottomCenter,
             children: [
               Positioned(
-                  left: 9,
+                  left: 8,
                   top: 3,
                   child: Icon(
                     priorityMap['1'],
@@ -65,7 +65,7 @@ class TaskField extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(
                     top: mediaQueryHeight * 0.012,
-                    left: mediaQueryHeight * 0.022),
+                    left: mediaQueryHeight * 0.018),
                 child: Icon(
                   tasksTypesMap['Task'],
                   size: mediaQueryHeight * 0.03,
@@ -74,7 +74,7 @@ class TaskField extends StatelessWidget {
             ],
           ),
           SizedBox(
-            width: mediaQueryWidth * 0.015,
+            width: mediaQueryWidth * 0.005,
           ),
           Padding(
             padding: EdgeInsets.only(bottom: mediaQueryHeight * 0.0015),
@@ -82,7 +82,7 @@ class TaskField extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
-                  width: mediaQueryWidth * 0.55,
+                  width: mediaQueryWidth * 0.53,
                   height: mediaQueryHeight * 0.03,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,

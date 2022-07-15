@@ -8,6 +8,7 @@ import 'package:procari/core/icons/sky_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:procari/presentation/composition/widgets/composition_side_card.dart';
 import 'package:procari/presentation/composition/widgets/composition_widgets.dart';
+import 'package:procari/presentation/composition/widgets/menu/composition_side_menu.dart';
 import 'package:procari/presentation/menus/application_top_bar.dart';
 import 'package:procari/presentation/menus/main_menu_drawer.dart';
 
@@ -22,53 +23,6 @@ class CompositionPageWidgets extends HookWidget {
     double mediaQueryWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   automaticallyImplyLeading: false,
-      //   title: Center(child: Text(title.value!)),
-      // ),
-      floatingActionButton: Builder(builder: (context) {
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            FloatingActionButton(
-              heroTag: null,
-              elevation: 0,
-              onPressed: () {},
-              child: IconButton(
-                iconSize: 18.0,
-                splashRadius: 20.0,
-                icon: Icon(
-                  SkyIcons.menu,
-                  color: Theme.of(context).iconTheme.color,
-                ),
-                onPressed: () {
-                  //TODO Add Menu Drawer Open
-                  Scaffold.of(context).openDrawer();
-                },
-              ),
-            ),
-            FloatingActionButton(
-              heroTag: null,
-              elevation: 0,
-              onPressed: () {},
-              child: IconButton(
-                iconSize: 18.0,
-                splashRadius: 20.0,
-                icon: Icon(
-                  SkyIcons.triple_dots,
-                  color: Theme.of(context).iconTheme.color,
-                ),
-                onPressed: () {
-                  //TODO Add Menu Right Drawer with Legal, Terms, Ect.
-                  Scaffold.of(context).openEndDrawer();
-                },
-              ),
-            ),
-          ],
-        );
-      }),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       drawer: MainMenuDrawer(
         null,
         currentRoute: RouteTypes.COMPOSITION,
@@ -79,12 +33,27 @@ class CompositionPageWidgets extends HookWidget {
           ApplicationTopBar(
             applicationWidgets: Container(),
           ),
-          CompositionSideCard(
-              mediaQueryWidth: mediaQueryWidth,
-              mediaQueryHeight: mediaQueryHeight),
-          Padding(
-            padding: EdgeInsets.only(top: mediaQueryHeight * 0.03),
-            child: CompositionWidgets(),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CompositionSideCard(
+                  mediaQueryWidth: mediaQueryWidth,
+                  mediaQueryHeight: mediaQueryHeight * 0.965,
+                ),
+                CompositionWidgets(),
+              ],
+            ),
+          ),
+          // Padding(
+          //   padding: EdgeInsets.only(top: mediaQueryHeight * 0.03),
+          //   child:
+          // ),
+          CompositionSideMenu(
+            mediaQueryHeight: mediaQueryHeight,
+            mediaQueryWidth: mediaQueryWidth,
           ),
         ],
       ),

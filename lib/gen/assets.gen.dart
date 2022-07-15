@@ -39,6 +39,18 @@ class $AssetsImagesBadgesGen {
   AssetGenImage get completed =>
       const AssetGenImage('assets/images/badges/Completed.png');
 
+  /// File path: assets/images/badges/Disjoin.png
+  AssetGenImage get disjoin =>
+      const AssetGenImage('assets/images/badges/Disjoin.png');
+
+  /// File path: assets/images/badges/Joined.png
+  AssetGenImage get joined =>
+      const AssetGenImage('assets/images/badges/Joined.png');
+
+  /// File path: assets/images/badges/Linked.png
+  AssetGenImage get linked =>
+      const AssetGenImage('assets/images/badges/Linked.png');
+
   /// File path: assets/images/badges/Maybe.png
   AssetGenImage get maybe =>
       const AssetGenImage('assets/images/badges/Maybe.png');

@@ -8,7 +8,7 @@ import 'package:procari/core/data/routes.dart';
 import 'package:procari/presentation/dashboard/projects/projectCharacteristics/selectors/project_priority_selector.dart';
 import 'package:procari/presentation/dashboard/projects/projectCharacteristics/selectors/project_status_selector.dart';
 import 'package:procari/presentation/dashboard/projects/projectCharacteristics/selectors/project_type_selector.dart';
-import 'package:procari/presentation/dashboard/projects_widgets.dart';
+import 'package:procari/presentation/menus/widgets/project_list_widgets.dart';
 import 'package:procari/presentation/dashboard/widgets/version_chooser_sheet.dart';
 import 'package:procari/presentation/tasks/widgets/tasks_builder.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:procari/core/icons/sky_icons.dart';
 
-import 'package:procari/presentation/dashboard/projects/widgets/project_card.dart';
+import 'package:procari/presentation/menus/widgets/widgets/project_card.dart';
 import 'package:procari/presentation/dashboard/projects/widgets/project_creation_page.dart';
 import 'package:procari/presentation/menus/main_menu_drawer.dart';
 import 'package:procari/presentation/menus/widgets/side_menu_addition_position.dart';
@@ -122,7 +122,7 @@ class DashboardPageWidgets extends HookWidget {
               Padding(
                 padding: EdgeInsets.only(
                   left: mediaQueryWidth * 0.001,
-                  top: mediaQueryHeight * 0.001,
+                  top: mediaQueryHeight * 0.03,
                 ),
                 child: SizedBox(
                   height: mediaQueryHeight * 0.18,
@@ -131,7 +131,7 @@ class DashboardPageWidgets extends HookWidget {
                     children: [
                       //!Notifications
                       SizedBox(
-                        width: mediaQueryWidth * 0.50,
+                        width: mediaQueryWidth * 0.60,
                         child: ListView.builder(
                             //TODO When a Page has multiple Scrollables you must add a 'ScrollController()'
                             controller: ScrollController(),
@@ -140,42 +140,44 @@ class DashboardPageWidgets extends HookWidget {
                               return Padding(
                                 padding: EdgeInsets.fromLTRB(
                                     mediaQueryWidth * 0.02,
-                                    mediaQueryWidth * 0.003,
+                                    mediaQueryWidth * 0.001,
                                     mediaQueryWidth * 0.02,
-                                    mediaQueryWidth * 0.003),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                    mediaQueryWidth * 0.001),
+                                child: Column(
                                   children: [
-                                    Text(
-                                      '8:05 AM',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .labelMedium,
-                                    ),
-                                    Text(
-                                      '15/5',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .labelMedium,
-                                    ),
-                                    Container(
-                                      width: mediaQueryWidth * 0.40,
-                                      child: Card(
-                                        elevation: 8.0,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0)),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(10.0),
-                                          child: AutoSizeText(
-                                            'Notificaton Card',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodySmall,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          '8:05 AM',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .labelMedium,
+                                        ),
+                                        Container(
+                                          width: mediaQueryWidth * 0.50,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(5.0),
+                                            child: AutoSizeText(
+                                              'Notificaton Line',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodySmall,
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                        Text(
+                                          '15/5',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .labelMedium,
+                                        ),
+                                      ],
+                                    ),
+                                    Divider(
+                                      thickness: 0.1,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                   ],
                                 ),
@@ -185,92 +187,137 @@ class DashboardPageWidgets extends HookWidget {
                       //!Icons
                       SizedBox(
                         width: mediaQueryWidth * 0.38,
-                        child: Padding(
-                          padding:
-                              EdgeInsets.only(bottom: mediaQueryHeight * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  //TODO Add State : Get # of Open Tasks
-                                  AutoSizeText(
+                        height: mediaQueryHeight * 0.19,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                //TODO Add State : Get # of Open Tasks
+                                SizedBox(
+                                  height: mediaQueryHeight * 0.04,
+                                  width: mediaQueryHeight * 0.04,
+                                  child: AutoSizeText(
                                     '56',
                                     style:
-                                        Theme.of(context).textTheme.titleLarge,
+                                        Theme.of(context).textTheme.titleMedium,
+                                    textAlign: TextAlign.center,
                                   ),
+                                ),
 
-                                  //TODO Add Localization
-                                  AutoSizeText(
-                                    'Tasks',
-                                    style:
-                                        Theme.of(context).textTheme.labelLarge,
-                                  ),
-                                ],
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  //TODO
-                                  showModalBottomSheet(
-                                      context: context,
-                                      builder: ((context) =>
-                                          ProjectTypeSelector(
-                                            projectTypeLS: projectTypeLS,
-                                          )));
-                                },
-                                child: Column(
+                                //TODO Add Localization
+                                AutoSizeText(
+                                  'Tasks',
+                                  style:
+                                      Theme.of(context).textTheme.labelMedium,
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    //TODO Click to change project Type
                                     Icon(
-                                      projectTypesMap[projectTypeLS.value],
+                                      SkyIcons.profile,
                                       size: mediaQueryHeight * 0.08,
                                     ),
 
                                     //TODO Add Localization
                                     AutoSizeText(
-                                      'Type',
+                                      'Role',
                                       style: Theme.of(context)
                                           .textTheme
                                           .labelLarge,
                                     ),
                                   ],
                                 ),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  //TODO
-                                  showModalBottomSheet(
-                                      context: context,
-                                      builder: ((context) =>
-                                          ProjectPrioritySelector(
-                                            projectPriorityLS:
-                                                projectPriorityLS,
-                                          )));
-                                },
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    //TODO Click to change project Type
-                                    Icon(
-                                      priorityMap[projectPriorityLS.value],
-                                      size: mediaQueryHeight * 0.08,
-                                    ),
+                                TextButton(
+                                  onPressed: () {
+                                    //TODO
+                                    showModalBottomSheet(
+                                        context: context,
+                                        builder: ((context) =>
+                                            ProjectTypeSelector(
+                                              projectTypeLS: projectTypeLS,
+                                            )));
+                                  },
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      //TODO Click to change project Type
+                                      Icon(
+                                        projectTypesMap[projectTypeLS.value],
+                                        size: mediaQueryHeight * 0.04,
+                                      ),
 
-                                    //TODO Add Localization
-                                    AutoSizeText(
-                                      'Priority',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .labelLarge,
-                                    ),
-                                  ],
+                                      //TODO Add Localization
+                                      AutoSizeText(
+                                        'Type',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelMedium,
+                                      ),
+                                    ],
+                                  ),
+                                  style: ButtonStyle(
+                                    padding: MaterialStateProperty.resolveWith(
+                                        (states) => EdgeInsets.zero),
+                                    overlayColor:
+                                        MaterialStateProperty.resolveWith(
+                                            (states) => Colors.transparent),
+                                  ),
                                 ),
-                              )
-                            ],
-                          ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                TextButton(
+                                  onPressed: () {
+                                    //TODO
+                                    showModalBottomSheet(
+                                        context: context,
+                                        builder: ((context) =>
+                                            ProjectPrioritySelector(
+                                              projectPriorityLS:
+                                                  projectPriorityLS,
+                                            )));
+                                  },
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      //TODO Click to change project Type
+                                      Icon(
+                                        priorityMap[projectPriorityLS.value],
+                                        size: mediaQueryHeight * 0.04,
+                                      ),
+
+                                      //TODO Add Localization
+                                      AutoSizeText(
+                                        'Priority',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelMedium,
+                                      ),
+                                    ],
+                                  ),
+                                  style: ButtonStyle(
+                                    padding: MaterialStateProperty.resolveWith(
+                                        (states) => EdgeInsets.zero),
+                                    overlayColor:
+                                        MaterialStateProperty.resolveWith(
+                                            (states) => Colors.transparent),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
                         ),
                       )
                     ],
@@ -282,7 +329,7 @@ class DashboardPageWidgets extends HookWidget {
                 child: Padding(
                   padding: EdgeInsets.only(
                     top: mediaQueryWidth * 0.02,
-                    left: mediaQueryWidth * 0.05,
+                    left: mediaQueryWidth * 0.02,
                   ),
                   child: Row(
                     children: [
@@ -290,13 +337,14 @@ class DashboardPageWidgets extends HookWidget {
                         children: [
                           //!Tasks
                           Container(
-                            width: mediaQueryWidth * 0.54,
+                            width: mediaQueryWidth * 0.58,
                             child: Column(
                               children: [
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      'Idea Dump',
+                                    AutoSizeText(
+                                      'Quick Tasks',
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleMedium,
@@ -307,7 +355,7 @@ class DashboardPageWidgets extends HookWidget {
                                 Row(
                                   children: [
                                     SizedBox(
-                                      width: mediaQueryWidth * 0.54,
+                                      width: mediaQueryWidth * 0.58,
                                       height: mediaQueryHeight * 0.53,
                                       child: TasksBuilder(
                                         key: ValueKey('TaskBuilderDashboard'),
@@ -333,74 +381,96 @@ class DashboardPageWidgets extends HookWidget {
           Positioned(
             bottom: 0,
             right: 0,
-            child: Container(
-              width: mediaQueryWidth * 0.38,
-              height: mediaQueryHeight * 0.64,
-              child: Material(
-                color: Theme.of(context).backgroundColor,
-                shape: Theme.of(context).cardTheme.shape,
-                elevation: Theme.of(context).cardTheme.elevation!,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: mediaQueryWidth * 0.02,
-                    left: mediaQueryWidth * 0.02,
-                    right: mediaQueryWidth * 0.02,
-                  ),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(SkyIcons.title),
-                          ],
-                        ),
-                        Container(
-                          height: mediaQueryHeight * 0.57,
-                          width: mediaQueryWidth * 0.37,
-                          child: Padding(
-                            padding: EdgeInsets.fromLTRB(
-                              mediaQueryWidth * 0.005,
-                              mediaQueryWidth * 0.015,
-                              mediaQueryWidth * 0.005,
-                              mediaQueryWidth * 0.005,
-                            ),
-                            child: TextField(
-                              //controller: textEditingController,
-                              onChanged: (value) {
-                                //TODO Add Bloc
-
-                                // context
-                                //     .read<CharacterCreationBloc>()
-                                //     .add(CharacterCreationEvent.descriptionChange(value));
-                              },
-                              textAlign: TextAlign.left,
-                              maxLines: null,
-                              decoration: InputDecoration(
-                                isDense: true,
-                                contentPadding: const EdgeInsets.all(0),
-                                hintStyle: TextStyle(
-                                  color: const Color.fromRGBO(89, 89, 89, 1),
-                                  fontSize: Theme.of(context)
-                                      .textTheme
-                                      .bodyText2!
-                                      .fontSize,
-                                ),
-                                border: InputBorder.none,
-                                hintText: 'Quick Notes...',
-                              ),
-                              style: TextStyle(
-                                color: const Color.fromRGBO(179, 179, 179, 1),
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .bodyText2!
-                                    .fontSize,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ]),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AutoSizeText(
+                      'Quick Notes',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ],
                 ),
-              ),
+                SizedBox(
+                  height: mediaQueryHeight * 0.007,
+                ),
+                Container(
+                  width: mediaQueryWidth * 0.38,
+                  height: mediaQueryHeight * 0.565,
+                  child: Material(
+                    color: Theme.of(context).backgroundColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20.0),
+                      ),
+                    ),
+                    elevation: Theme.of(context).cardTheme.elevation!,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        top: mediaQueryWidth * 0.02,
+                        left: mediaQueryWidth * 0.02,
+                        right: mediaQueryWidth * 0.02,
+                      ),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(SkyIcons.title),
+                              ],
+                            ),
+                            Container(
+                              height: mediaQueryHeight * 0.50,
+                              width: mediaQueryWidth * 0.37,
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                  mediaQueryWidth * 0.005,
+                                  mediaQueryWidth * 0.015,
+                                  mediaQueryWidth * 0.005,
+                                  mediaQueryWidth * 0.005,
+                                ),
+                                child: TextField(
+                                  //controller: textEditingController,
+                                  onChanged: (value) {
+                                    //TODO Add Bloc
+
+                                    // context
+                                    //     .read<CharacterCreationBloc>()
+                                    //     .add(CharacterCreationEvent.descriptionChange(value));
+                                  },
+                                  textAlign: TextAlign.left,
+                                  maxLines: null,
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    contentPadding: const EdgeInsets.all(0),
+                                    hintStyle: TextStyle(
+                                      color:
+                                          const Color.fromRGBO(89, 89, 89, 1),
+                                      fontSize: Theme.of(context)
+                                          .textTheme
+                                          .bodyText2!
+                                          .fontSize,
+                                    ),
+                                    border: InputBorder.none,
+                                    hintText: 'Quick Notes...',
+                                  ),
+                                  style: TextStyle(
+                                    color:
+                                        const Color.fromRGBO(179, 179, 179, 1),
+                                    fontSize: Theme.of(context)
+                                        .textTheme
+                                        .bodyText2!
+                                        .fontSize,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           //TODO Click to Change Status
@@ -440,8 +510,8 @@ class DashboardPageWidgets extends HookWidget {
             right: 0,
             child: Padding(
               padding: EdgeInsets.only(
-                top: mediaQueryWidth * 0.01,
-                right: mediaQueryWidth * 0.02,
+                top: mediaQueryWidth * 0.005,
+                right: mediaQueryWidth * 0.01,
               ),
               child: VersionChooserSheet(
                   mediaQueryHeight: mediaQueryHeight,

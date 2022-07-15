@@ -44,6 +44,14 @@ class _$MyRouter extends RootStackRouter {
       return CupertinoPageX<dynamic>(
           routeData: routeData, child: const AccountPage());
     },
+    ThemeSettingsRoute.name: (routeData) {
+      return CupertinoPageX<dynamic>(
+          routeData: routeData, child: const ThemeSettingsPage());
+    },
+    TasksCategoriesSettingsRoute.name: (routeData) {
+      return CupertinoPageX<dynamic>(
+          routeData: routeData, child: const TasksCategoriesSettingsPage());
+    },
     ProcariRoute.name: (routeData) {
       return CupertinoPageX<dynamic>(
           routeData: routeData, child: const ProcariPage());
@@ -53,13 +61,16 @@ class _$MyRouter extends RootStackRouter {
   @override
   List<RouteConfig> get routes => [
         RouteConfig('/#redirect',
-            path: '/', redirectTo: '/tasks', fullMatch: true),
+            path: '/', redirectTo: '/composition', fullMatch: true),
         RouteConfig(DashboardRoute.name, path: '/dashboard'),
         RouteConfig(TasksRoute.name, path: '/tasks'),
         RouteConfig(GraphRoute.name, path: '/graph'),
         RouteConfig(CompositionRoute.name, path: '/composition'),
         RouteConfig(CatalogRoute.name, path: '/catalog'),
         RouteConfig(AccountRoute.name, path: '/account'),
+        RouteConfig(ThemeSettingsRoute.name, path: '/theme-settings'),
+        RouteConfig(TasksCategoriesSettingsRoute.name,
+            path: '/tasks-categories-settings'),
         RouteConfig(ProcariRoute.name, path: '/procari')
       ];
 }
@@ -110,6 +121,25 @@ class AccountRoute extends PageRouteInfo<void> {
   const AccountRoute() : super(AccountRoute.name, path: '/account');
 
   static const String name = 'AccountRoute';
+}
+
+/// generated route for
+/// [ThemeSettingsPage]
+class ThemeSettingsRoute extends PageRouteInfo<void> {
+  const ThemeSettingsRoute()
+      : super(ThemeSettingsRoute.name, path: '/theme-settings');
+
+  static const String name = 'ThemeSettingsRoute';
+}
+
+/// generated route for
+/// [TasksCategoriesSettingsPage]
+class TasksCategoriesSettingsRoute extends PageRouteInfo<void> {
+  const TasksCategoriesSettingsRoute()
+      : super(TasksCategoriesSettingsRoute.name,
+            path: '/tasks-categories-settings');
+
+  static const String name = 'TasksCategoriesSettingsRoute';
 }
 
 /// generated route for

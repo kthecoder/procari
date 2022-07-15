@@ -14,5 +14,6 @@ class ProcariThemeExtension with _$ProcariThemeExtension {
     required int secondaryColor,
     required int gridColor,
     required ThemeElevation themeElevation,
+    required int checkColor,
   }) = _ProcariThemeExtension;
 }

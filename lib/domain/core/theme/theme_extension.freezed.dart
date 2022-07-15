@@ -21,11 +21,13 @@ class _$ProcariThemeExtensionTearOff {
   _ProcariThemeExtension call(
       {required int secondaryColor,
       required int gridColor,
-      required ThemeElevation themeElevation}) {
+      required ThemeElevation themeElevation,
+      required int checkColor}) {
     return _ProcariThemeExtension(
       secondaryColor: secondaryColor,
       gridColor: gridColor,
       themeElevation: themeElevation,
+      checkColor: checkColor,
     );
   }
 }
@@ -38,6 +40,7 @@ mixin _$ProcariThemeExtension {
   int get secondaryColor => throw _privateConstructorUsedError;
   int get gridColor => throw _privateConstructorUsedError;
   ThemeElevation get themeElevation => throw _privateConstructorUsedError;
+  int get checkColor => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProcariThemeExtensionCopyWith<ProcariThemeExtension> get copyWith =>
@@ -49,7 +52,11 @@ abstract class $ProcariThemeExtensionCopyWith<$Res> {
   factory $ProcariThemeExtensionCopyWith(ProcariThemeExtension value,
           $Res Function(ProcariThemeExtension) then) =
       _$ProcariThemeExtensionCopyWithImpl<$Res>;
-  $Res call({int secondaryColor, int gridColor, ThemeElevation themeElevation});
+  $Res call(
+      {int secondaryColor,
+      int gridColor,
+      ThemeElevation themeElevation,
+      int checkColor});
 
   $ThemeElevationCopyWith<$Res> get themeElevation;
 }
@@ -68,6 +75,7 @@ class _$ProcariThemeExtensionCopyWithImpl<$Res>
     Object? secondaryColor = freezed,
     Object? gridColor = freezed,
     Object? themeElevation = freezed,
+    Object? checkColor = freezed,
   }) {
     return _then(_value.copyWith(
       secondaryColor: secondaryColor == freezed
@@ -82,6 +90,10 @@ class _$ProcariThemeExtensionCopyWithImpl<$Res>
           ? _value.themeElevation
           : themeElevation // ignore: cast_nullable_to_non_nullable
               as ThemeElevation,
+      checkColor: checkColor == freezed
+          ? _value.checkColor
+          : checkColor // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -100,7 +112,11 @@ abstract class _$ProcariThemeExtensionCopyWith<$Res>
           $Res Function(_ProcariThemeExtension) then) =
       __$ProcariThemeExtensionCopyWithImpl<$Res>;
   @override
-  $Res call({int secondaryColor, int gridColor, ThemeElevation themeElevation});
+  $Res call(
+      {int secondaryColor,
+      int gridColor,
+      ThemeElevation themeElevation,
+      int checkColor});
 
   @override
   $ThemeElevationCopyWith<$Res> get themeElevation;
@@ -122,6 +138,7 @@ class __$ProcariThemeExtensionCopyWithImpl<$Res>
     Object? secondaryColor = freezed,
     Object? gridColor = freezed,
     Object? themeElevation = freezed,
+    Object? checkColor = freezed,
   }) {
     return _then(_ProcariThemeExtension(
       secondaryColor: secondaryColor == freezed
@@ -136,6 +153,10 @@ class __$ProcariThemeExtensionCopyWithImpl<$Res>
           ? _value.themeElevation
           : themeElevation // ignore: cast_nullable_to_non_nullable
               as ThemeElevation,
+      checkColor: checkColor == freezed
+          ? _value.checkColor
+          : checkColor // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -146,7 +167,8 @@ class _$_ProcariThemeExtension implements _ProcariThemeExtension {
   const _$_ProcariThemeExtension(
       {required this.secondaryColor,
       required this.gridColor,
-      required this.themeElevation});
+      required this.themeElevation,
+      required this.checkColor});
 
   @override
   final int secondaryColor;
@@ -154,10 +176,12 @@ class _$_ProcariThemeExtension implements _ProcariThemeExtension {
   final int gridColor;
   @override
   final ThemeElevation themeElevation;
+  @override
+  final int checkColor;
 
   @override
   String toString() {
-    return 'ProcariThemeExtension(secondaryColor: $secondaryColor, gridColor: $gridColor, themeElevation: $themeElevation)';
+    return 'ProcariThemeExtension(secondaryColor: $secondaryColor, gridColor: $gridColor, themeElevation: $themeElevation, checkColor: $checkColor)';
   }
 
   @override
@@ -169,7 +193,9 @@ class _$_ProcariThemeExtension implements _ProcariThemeExtension {
                 .equals(other.secondaryColor, secondaryColor) &&
             const DeepCollectionEquality().equals(other.gridColor, gridColor) &&
             const DeepCollectionEquality()
-                .equals(other.themeElevation, themeElevation));
+                .equals(other.themeElevation, themeElevation) &&
+            const DeepCollectionEquality()
+                .equals(other.checkColor, checkColor));
   }
 
   @override
@@ -177,7 +203,8 @@ class _$_ProcariThemeExtension implements _ProcariThemeExtension {
       runtimeType,
       const DeepCollectionEquality().hash(secondaryColor),
       const DeepCollectionEquality().hash(gridColor),
-      const DeepCollectionEquality().hash(themeElevation));
+      const DeepCollectionEquality().hash(themeElevation),
+      const DeepCollectionEquality().hash(checkColor));
 
   @JsonKey(ignore: true)
   @override
@@ -190,7 +217,8 @@ abstract class _ProcariThemeExtension implements ProcariThemeExtension {
   const factory _ProcariThemeExtension(
       {required int secondaryColor,
       required int gridColor,
-      required ThemeElevation themeElevation}) = _$_ProcariThemeExtension;
+      required ThemeElevation themeElevation,
+      required int checkColor}) = _$_ProcariThemeExtension;
 
   @override
   int get secondaryColor;
@@ -198,6 +226,8 @@ abstract class _ProcariThemeExtension implements ProcariThemeExtension {
   int get gridColor;
   @override
   ThemeElevation get themeElevation;
+  @override
+  int get checkColor;
   @override
   @JsonKey(ignore: true)
   _$ProcariThemeExtensionCopyWith<_ProcariThemeExtension> get copyWith =>

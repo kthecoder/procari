@@ -86,8 +86,8 @@ class TasksWidgets extends HookWidget {
                 ],
               ),
               Divider(
-                endIndent: mediaQueryWidth * 0.07,
-                indent: mediaQueryWidth * 0.07,
+                endIndent: mediaQueryWidth * 0.026,
+                indent: mediaQueryWidth * 0.026,
               ),
               Expanded(
                 child: Padding(

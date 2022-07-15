@@ -7,9 +7,9 @@ import 'package:procari/core/data/account/types.dart';
 import 'package:procari/core/data/projects/status.dart';
 import 'package:procari/core/icons/badges.dart';
 import 'package:procari/core/icons/sky_icons.dart';
-import 'package:procari/presentation/account/widgets/selectors/account_status_selector.dart';
-import 'package:procari/presentation/account/widgets/selectors/account_type_selector.dart';
-import 'package:procari/presentation/core/item_field_card.dart';
+import 'package:procari/presentation/settings/widgets/referenceCards/account_form_input_field.dart';
+import 'package:procari/presentation/settings/widgets/selectors/account_status_selector.dart';
+import 'package:procari/presentation/settings/widgets/selectors/account_type_selector.dart';
 import 'package:procari/presentation/dashboard/projects/projectCharacteristics/selectors/project_status_selector.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -105,36 +105,60 @@ class AccountAdditionSheet extends HookWidget {
                 ],
               ),
             ),
-            //! Top Input
             Column(
               children: [
-                ItemFieldCard(mediaQueryWidth: mediaQueryWidth),
-                ItemFieldCard(mediaQueryWidth: mediaQueryWidth),
+                AccountFormInputField(
+                  hintTextMessage: 'Username ...',
+                  accountFormInputOnChange: (value) {
+                    //TODO Add Bloc
+                  },
+                  formTitle: 'git config --global user.name',
+                  obscuringTextChoice: false,
+                  mediaQueryWidth: mediaQueryWidth,
+                ),
+                SizedBox(height: mediaQueryHeight * 0.023),
+                AccountFormInputField(
+                  hintTextMessage: 'Email ...',
+                  accountFormInputOnChange: (value) {
+                    //TODO Add Bloc
+                  },
+                  formTitle: 'git config --global user.email',
+                  obscuringTextChoice: false,
+                  mediaQueryWidth: mediaQueryWidth,
+                ),
               ],
             ),
             //! Dvider
             Divider(
-              indent: mediaQueryWidth * 0.12,
-              endIndent: mediaQueryWidth * 0.12,
+              indent: mediaQueryWidth * 0.17,
+              endIndent: mediaQueryWidth * 0.17,
             ),
             //! Keys Input
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //TODO Update ItemFieldCard to take in variable width length for card & under_label
-                ItemFieldCard(mediaQueryWidth: mediaQueryWidth),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      AppLocalizations.of(context)!.or_caps,
-                      style: Theme.of(context).textTheme.labelLarge,
-                    ),
-                  ],
+                AccountFormInputField(
+                  hintTextMessage: 'SSH ...',
+                  accountFormInputOnChange: (value) {
+                    //TODO Add Bloc
+                  },
+                  formTitle: 'SSH Key',
+                  obscuringTextChoice: true,
+                  mediaQueryWidth: mediaQueryWidth,
                 ),
-                ItemFieldCard(mediaQueryWidth: mediaQueryWidth),
+                SizedBox(height: mediaQueryHeight * 0.023),
+                AccountFormInputField(
+                  hintTextMessage: 'Password ...',
+                  accountFormInputOnChange: (value) {
+                    //TODO Add Bloc
+                  },
+                  formTitle: 'Password',
+                  obscuringTextChoice: true,
+                  mediaQueryWidth: mediaQueryWidth,
+                ),
               ],
             ),
-
             Column(
               children: [
                 TextButton(
